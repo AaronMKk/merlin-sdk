@@ -8,23 +8,32 @@ import (
 )
 
 var (
-	Default  HttpClient
-	endpoint string
+	config  Config
+	Default HttpClient
 )
 
 type HttpClient interface {
 	ForwardTo(req *http.Request, jsonResp interface{}) (statusCode int, code string, err error)
 }
 
-func Init(endpointURL string) {
+func Init(cfg *Config) {
 	Default = newhttpClient(3, 3)
-	endpoint = endpointURL
+	config = *cfg
 }
 
+// Endpoint
 func Endpoint(v string) string {
-	return endpoint + v
+	return config.Endpoint + v
 }
 
+// Config
+type Config struct {
+	Token       string `json:"token"          required:"true"`
+	Endpoint    string `json:"endpoint"       required:"true"`
+	TokenHeader string `json:"token_header"   required:"true"`
+}
+
+// responseData
 type responseData struct {
 	Code string `json:"code"`
 	Msg  string `json:"msg"`

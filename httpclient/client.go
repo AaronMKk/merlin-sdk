@@ -23,6 +23,8 @@ type httpClient struct {
 }
 
 func (hc *httpClient) ForwardTo(req *http.Request, jsonResp interface{}) (statusCode int, code string, err error) {
+	req.Header.Set(config.TokenHeader, config.Token)
+
 	resp, err := hc.do(req)
 	if err != nil || resp == nil {
 		return
