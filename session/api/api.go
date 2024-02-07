@@ -9,21 +9,22 @@ import (
 )
 
 var (
-	urlToCheckAndRefresh = httpclient.Endpoint("/v1/session/check")
+	urlToCheckAndRefresh = "/v1/session/check"
 )
 
-func CheckAndRefresh(param *session.RequestToCheckAndRefresh) (resp session.ResponseToCheckAndRefresh, err error) {
+func CheckAndRefresh(param *session.RequestToCheckAndRefresh) (resp session.ResponseToCheckAndRefresh,
+	code string, err error) {
 	v, err := httpclient.JsonMarshal(param)
 	if err != nil {
 		return
 	}
 
-	req, err := http.NewRequest(http.MethodPut, urlToCheckAndRefresh, bytes.NewBuffer(v))
+	req, err := http.NewRequest(http.MethodPut, httpclient.Endpoint(urlToCheckAndRefresh), bytes.NewBuffer(v))
 	if err != nil {
 		return
 	}
 
-	_, _, err = httpclient.Default.ForwardTo(req, &resp)
+	_, code, err = httpclient.Default.ForwardTo(req, &resp)
 
 	return
 }

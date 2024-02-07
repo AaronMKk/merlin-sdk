@@ -35,9 +35,9 @@ type Config struct {
 
 // responseData
 type responseData struct {
-	Code string `json:"code"`
-	Msg  string `json:"msg"`
-	Data []byte `json:"data"`
+	Code string          `json:"code"`
+	Msg  string          `json:"msg"`
+	Data json.RawMessage `json:"data"`
 }
 
 func (resp *responseData) toResp(v interface{}) error {
