@@ -2,6 +2,7 @@ package httpclient
 
 import (
 	"bytes"
+	"crypto/tls"
 	"encoding/json"
 	"net/http"
 	"time"
@@ -12,6 +13,9 @@ func newhttpClient(n int, timeout int) HttpClient {
 		MaxRetries: n,
 		Client: &http.Client{
 			Timeout: time.Duration(timeout) * time.Second,
+			Transport: &http.Transport{TLSClientConfig: &tls.Config{
+				InsecureSkipVerify: true,
+			}},
 		},
 	}
 }
