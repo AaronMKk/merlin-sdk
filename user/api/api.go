@@ -9,7 +9,7 @@ import (
 	"github.com/openmerlin/merlin-sdk/user"
 )
 
-var (
+const (
 	urlToVerifyToken = "/v1/user/token/verify"
 )
 

@@ -9,7 +9,7 @@ import (
 	"github.com/openmerlin/merlin-sdk/models"
 )
 
-var (
+const (
 	baseModelUrl = "/v1/model"
 )
 

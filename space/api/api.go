@@ -8,7 +8,7 @@ import (
 	"github.com/openmerlin/merlin-sdk/space"
 )
 
-var (
+const (
 	baseSpaceUrl = "/v1/space"
 )
 

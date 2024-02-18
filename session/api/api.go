@@ -8,7 +8,7 @@ import (
 	"github.com/openmerlin/merlin-sdk/session"
 )
 
-var (
+const (
 	urlToCheckAndRefresh = "/v1/session/check"
 )
 

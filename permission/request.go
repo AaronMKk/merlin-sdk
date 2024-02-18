@@ -1,8 +1,7 @@
 package permission
 
 type RequestToCheckPermission struct {
-	User    string `json:"user"`
-	Object  string `json:"object"`
-	ObjType string `json:"obj_type"`
-	Action  int    `json:"action"`
+	User  string `json:"user"`
+	Name  string `json:"name"`
+	Owner string `json:"owner"`
 }

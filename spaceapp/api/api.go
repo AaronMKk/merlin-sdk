@@ -8,7 +8,7 @@ import (
 	"github.com/openmerlin/merlin-sdk/spaceapp"
 )
 
-var (
+const (
 	urlToCreateSpaceApp         = "/v1/space-app"
 	urlToNotifyBuildIsStarted   = "/v1/space-app/build/started"
 	urlToNotifyBuildIsDone      = "/v1/space-app/build/done"

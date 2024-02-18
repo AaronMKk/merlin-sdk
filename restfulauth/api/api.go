@@ -8,7 +8,7 @@ import (
 	"github.com/openmerlin/merlin-sdk/restfulauth"
 )
 
-var (
+const (
 	restfulAuthUrl = "/v1/user/token/verify"
 )
 
