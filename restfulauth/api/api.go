@@ -27,7 +27,7 @@ func CheckAuth(
 		return
 	}
 
-	_, code, err = httpclient.Default.ForwardTo(req, response)
+	_, code, err = httpclient.Default.ForwardTo(req, &response)
 
 	return
 }
