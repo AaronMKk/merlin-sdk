@@ -14,6 +14,7 @@ const (
 	checkDeletePermissionUrl = "/v1/resource/permission/delete"
 )
 
+// CanRead for request resource permission read
 func CanRead(
 	body permission.RequestToCheckPermission,
 ) (code string, err error) {
@@ -35,6 +36,7 @@ func CanRead(
 
 }
 
+// CanUpdate for request resource permission update
 func CanUpdate(
 	body permission.RequestToCheckPermission,
 ) (code string, err error) {
@@ -56,6 +58,7 @@ func CanUpdate(
 
 }
 
+// CanDelete for request resource permission delete
 func CanDelete(
 	body permission.RequestToCheckPermission,
 ) (code string, err error) {

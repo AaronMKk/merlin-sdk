@@ -12,6 +12,7 @@ const (
 	restfulAuthUrl = "/v1/user/token/verify"
 )
 
+// CheckAuth for request user token verify
 func CheckAuth(
 	body restfulauth.RequestToRestfulAuth,
 ) (response restfulauth.ResponseToToRestfulAuth, code string, err error) {
