@@ -9,9 +9,9 @@ import (
 )
 
 const (
-	checkReadPermissionUrl   = "/v1/resource/permission/read"
-	checkUpdatePermissionUrl = "/v1/resource/permission/update"
-	checkDeletePermissionUrl = "/v1/resource/permission/delete"
+	checkReadPermissionUrl   = "/v1/coderepo/permission/read"
+	checkUpdatePermissionUrl = "/v1/coderepo/permission/update"
+	checkDeletePermissionUrl = "/v1/coderepo/permission/delete"
 )
 
 // CanRead for request resource permission read
