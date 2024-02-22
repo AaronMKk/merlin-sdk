@@ -7,6 +7,11 @@ import (
 	"encoding/json"
 )
 
+const (
+	maxRetries = 3
+	timeout    = 10
+)
+
 var (
 	config  Config
 	Default HttpClient
@@ -17,7 +22,7 @@ type HttpClient interface {
 }
 
 func Init(cfg *Config) {
-	Default = newhttpClient(3, 3)
+	Default = newhttpClient(maxRetries, timeout)
 	config = *cfg
 }
 
