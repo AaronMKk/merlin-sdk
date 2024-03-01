@@ -11,3 +11,7 @@ type ResponseToCheckAndRefresh struct {
 	User      string `json:"user"`
 	CSRFToken string `json:"csrf_token"`
 }
+
+type RequestToClear struct {
+	SessionId string `json:"session_id"`
+}
