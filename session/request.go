@@ -2,7 +2,7 @@ package session
 
 type RequestToCheckAndRefresh struct {
 	IP        string `json:"ip"`
-	LoginId   string `json:"login_id"`
+	SessionId string `json:"session_id"`
 	CSRFToken string `json:"csrf_token"`
 	UserAgent string `json:"user_agent"`
 }

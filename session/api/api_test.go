@@ -23,7 +23,7 @@ func TestCheckAndRefresh(t *testing.T) {
 			args{
 				param: &session.RequestToCheckAndRefresh{
 					IP:        "127.0.0.1",
-					LoginId:   "1",
+					SessionId: "1",
 					CSRFToken: "12345",
 					UserAgent: "test1",
 				},
