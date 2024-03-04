@@ -7,7 +7,8 @@ package restfulauth
 
 // RequestToRestfulAuth for CheckAuth request
 type RequestToRestfulAuth struct {
-	Token string `json:"token"`
+	Token  string `json:"token"`
+	Action string `json:"action"`
 }
 
 // ResponseToToRestfulAuth for CheckAuth response
