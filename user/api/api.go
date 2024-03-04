@@ -10,7 +10,8 @@ import (
 )
 
 const (
-	urlToVerifyToken = "/v1/user/token/verify"
+	urlToVerifyToken  = "/v1/user/token/verify"
+	urlToPlatformInfo = "/v1/user/%s/platform"
 )
 
 func VerifyToken(param *user.RequestToVerifyToken) (code string, err error) {
@@ -31,6 +32,18 @@ func VerifyToken(param *user.RequestToVerifyToken) (code string, err error) {
 	}
 
 	_, code, err = httpclient.Default.ForwardTo(req, nil)
+
+	return
+}
+
+func GetPlatFromUser(account string) (resp user.ResponseToGetPlatFromUser, code string, err error) {
+	url := fmt.Sprintf(urlToPlatformInfo, account)
+	req, err := http.NewRequest(http.MethodGet, httpclient.Endpoint(url), nil)
+	if err != nil {
+		return
+	}
+
+	_, code, err = httpclient.Default.ForwardTo(req, &resp)
 
 	return
 }
