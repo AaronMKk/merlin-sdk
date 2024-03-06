@@ -36,7 +36,7 @@ func VerifyToken(param *user.RequestToVerifyToken) (code string, err error) {
 	return
 }
 
-func GetPlatFromUser(account string) (resp user.ResponseToGetPlatFromUser, code string, err error) {
+func GetPlatFromUser(account string) (resp, code string, err error) {
 	url := fmt.Sprintf(urlToPlatformInfo, account)
 	req, err := http.NewRequest(http.MethodGet, httpclient.Endpoint(url), nil)
 	if err != nil {
