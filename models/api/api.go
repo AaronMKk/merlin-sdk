@@ -30,3 +30,17 @@ func ResetLabel(modelId string, param *models.ReqToResetLabel) (code string, err
 
 	return
 }
+
+// GetModelById get model info by id
+func GetModelById(modelId string) (resp models.ModelDTO, code string, err error) {
+	urlToGetById := httpclient.Endpoint(fmt.Sprintf("%s/%s", baseModelUrl, modelId))
+
+	req, err := http.NewRequest(http.MethodGet, urlToGetById, nil)
+	if err != nil {
+		return
+	}
+
+	_, code, err = httpclient.Default.ForwardTo(req, &resp)
+
+	return
+}
